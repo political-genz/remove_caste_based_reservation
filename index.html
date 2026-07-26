@@ -254,13 +254,12 @@ button{
     margin:30px auto;
 }
 
-
 .mail-box{
 
     flex:1 1 450px;
     min-width:0;
 
-    background:#fff;
+    background:white;
 
     padding:25px;
 
@@ -270,59 +269,47 @@ button{
 
     box-shadow:0 8px 20px rgba(0,0,0,0.08);
 
+    height:auto;
 }
 
-
-.mail-box h2{
-
-    font-size:22px;
-    margin-bottom:15px;
-    color:#138808;
-
-}
 
 
 .mail-box pre{
 
     white-space:pre-wrap;
-    word-wrap:break-word;
+    word-break:break-word;
     overflow-wrap:break-word;
 
     font-family:Segoe UI,Arial,sans-serif;
 
     font-size:16px;
 
-    line-height:1.7;
-
-    color:#333;
+    line-height:1.8;
 
     margin:0;
+
+    height:auto;
 
 }
 
 
+
+/* Mobile */
 
 @media(max-width:700px){
 
     .mail-container{
 
         display:block;
-        width:100%;
+
     }
 
 
     .mail-box{
 
         width:100%;
-        padding:18px;
         margin-bottom:20px;
-
-    }
-
-
-    .mail-box h2{
-
-        font-size:19px;
+        padding:18px;
 
     }
 
@@ -330,7 +317,7 @@ button{
     .mail-box pre{
 
         font-size:14px;
-        line-height:1.6;
+        line-height:1.7;
 
     }
 
