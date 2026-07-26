@@ -531,13 +531,16 @@ async function loadCounter(){
 
     try{
 
-        const res = await fetch(counterURL);
-        const data = await res.json();
+        const response = await fetch(
+            counterURL + "?t=" + Date.now()
+        );
 
-        console.log(data); // check response
+        const data = await response.json();
+
+        console.log(data);
 
         document.getElementById("clickCount").innerText =
-        data.data.up_count;
+        data.data?.up_count || 0;
 
     }
     catch(error){
@@ -547,7 +550,6 @@ async function loadCounter(){
     }
 
 }
-
 
 // Increase count
 async function increaseCounter(){
