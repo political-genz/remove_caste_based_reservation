@@ -246,25 +246,21 @@ button{
 
 
 .mail-container{
-
     display:flex;
-    gap:25px;
+    gap:20px;
     flex-wrap:wrap;
     width:100%;
     max-width:1000px;
-    margin:auto;
-
+    margin:30px auto;
 }
-
 
 
 .mail-box{
 
-    flex:1 1 400px;
+    flex:1 1 450px;
     min-width:0;
-    max-width:100%;
 
-    background:white;
+    background:#fff;
 
     padding:25px;
 
@@ -272,47 +268,31 @@ button{
 
     border-left:6px solid #ff6b00;
 
-    box-shadow:0 10px 25px rgba(0,0,0,0.1);
-
-    overflow:hidden;
+    box-shadow:0 8px 20px rgba(0,0,0,0.08);
 
 }
-
 
 
 .mail-box h2{
 
+    font-size:22px;
+    margin-bottom:15px;
     color:#138808;
-
-    margin-bottom:20px;
-
-    font-size:24px;
 
 }
 
 
-
 .mail-box pre{
 
-    display:block;
-
-    width:100%;
-
-    max-width:100%;
-
     white-space:pre-wrap;
+    word-wrap:break-word;
+    overflow-wrap:break-word;
 
-    word-break:break-word;
-
-    overflow-wrap:anywhere;
-
-    overflow-x:hidden;
-
-    font-family:"Segoe UI",Arial,sans-serif;
+    font-family:Segoe UI,Arial,sans-serif;
 
     font-size:16px;
 
-    line-height:1.8;
+    line-height:1.7;
 
     color:#333;
 
@@ -324,34 +304,35 @@ button{
 
 @media(max-width:700px){
 
-
-    body{
-
-        padding:15px;
-
-    }
-
-
     .mail-container{
 
-        flex-direction:column;
-
+        display:block;
+        width:100%;
     }
 
 
     .mail-box{
 
         width:100%;
+        padding:18px;
+        margin-bottom:20px;
 
     }
 
 
     .mail-box h2{
 
-        font-size:20px;
+        font-size:19px;
 
     }
 
+
+    .mail-box pre{
+
+        font-size:14px;
+        line-height:1.6;
+
+    }
 
 }
 
