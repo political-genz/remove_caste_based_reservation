@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Youth Email Campaign Against Caste Based Reservation</title>
+
+<title>Youth Email Campaign</title>
 
 <style>
 
@@ -14,155 +17,239 @@
 }
 
 body{
-    font-family:Segoe UI,Arial,sans-serif;
+
+    font-family:"Segoe UI",Arial,sans-serif;
     background:linear-gradient(135deg,#fffdf8,#f4f6f9);
     color:#222;
+
 }
+
 
 .topbar{
+
     height:8px;
-    background:linear-gradient(90deg,#FF9933 33%,white 33%,white 66%,#138808 66%);
+    background:linear-gradient(
+        90deg,
+        #FF9933 33%,
+        white 33%,
+        white 66%,
+        #138808 66%
+    );
+
 }
 
+
+
 .container{
+
     max-width:900px;
     margin:50px auto;
     background:white;
     padding:45px;
     border-radius:20px;
     box-shadow:0 15px 40px rgba(0,0,0,.1);
+
 }
 
+
+
+.center{
+
+    text-align:center;
+
+}
+
+
+
 .badge{
+
     display:inline-block;
     background:#e8f5e9;
     color:#138808;
-    padding:8px 18px;
+    padding:10px 20px;
     border-radius:30px;
-    font-weight:600;
+    font-weight:bold;
     margin-bottom:20px;
+
 }
 
-.center{
-    text-align:center;
-}
+
 
 h1{
+
     color:#ff6b00;
-    margin-bottom:10px;
     font-size:40px;
+    margin-bottom:15px;
+
 }
+
+
 
 .subtitle{
+
     color:#666;
     font-size:18px;
-    margin-bottom:35px;
+
 }
 
-.card{
-    background:#fff8f1;
-    border-left:6px solid #ff6b00;
-    padding:25px;
-    border-radius:12px;
-    margin-bottom:35px;
-}
 
-.card h2{
-    margin-bottom:12px;
-}
-
-.card p{
-    line-height:1.8;
-    color:#555;
-}
 
 .buttons{
+
     display:flex;
     justify-content:center;
     gap:20px;
     flex-wrap:wrap;
+    margin-top:35px;
+
 }
+
+
 
 button{
+
+    padding:16px 35px;
     border:none;
-    padding:16px 34px;
-    font-size:18px;
     border-radius:12px;
-    cursor:pointer;
+    font-size:18px;
     font-weight:bold;
-    transition:.25s;
+    cursor:pointer;
+    transition:.3s;
+
 }
+
+
 
 button:hover{
+
     transform:translateY(-3px);
+
 }
+
+
 
 .english{
+
     background:#ff6b00;
     color:white;
+
 }
 
-.english:hover{
-    box-shadow:0 10px 25px rgba(255,107,0,.35);
-}
+
 
 .hindi{
+
     background:#138808;
     color:white;
+
 }
 
-.hindi:hover{
-    box-shadow:0 10px 25px rgba(19,136,8,.35);
+
+
+.card{
+
+    margin-top:40px;
+    background:#fff8f1;
+    border-left:6px solid #ff6b00;
+    padding:25px;
+    border-radius:12px;
+
 }
+
+
+
+.card h2{
+
+    margin-bottom:15px;
+
+}
+
+
+
+.card p{
+
+    line-height:1.8;
+    color:#555;
+
+}
+
+
+
+.counter{
+
+    margin-top:35px;
+    font-size:22px;
+    font-weight:bold;
+
+}
+
+
 
 .share{
+
     text-align:center;
-    margin-top:45px;
+    margin-top:40px;
+
 }
+
+
 
 .share a{
+
     display:inline-block;
-    text-decoration:none;
-    color:#444;
-    background:#f5f5f5;
-    padding:12px 18px;
-    margin:8px;
+    background:#25D366;
+    color:white;
+    padding:14px 25px;
     border-radius:10px;
-    transition:.2s;
+    text-decoration:none;
+    font-weight:bold;
+
 }
 
-.share a:hover{
-    background:#222;
-    color:white;
-}
+
 
 footer{
-    margin-top:45px;
+
     text-align:center;
-    color:#888;
-    font-size:14px;
+    margin-top:40px;
+    color:#777;
+
 }
+
+
 
 @media(max-width:700px){
 
 .container{
+
     margin:20px;
     padding:25px;
+
 }
+
 
 h1{
+
     font-size:30px;
+
 }
+
 
 button{
+
     width:100%;
-}
 
 }
+
+
+}
+
 
 </style>
 
+
 </head>
+
 
 <body>
 
@@ -181,6 +268,14 @@ button{
 <p class="subtitle">
 A respectful citizen initiative against caste based reservation - Reforms in Reservation, Cut-Off Marks, and Examination Fee Policies. <br> <br>
 Choose your preferred language below.
+
+<div class="counter center">
+
+📊 Total Mail Sent:
+<span id="clickCount">0</span>
+
+</div>
+
 </p>
 
 </div>
@@ -220,32 +315,114 @@ The campaign is entirely voluntary and intended to encourage respectful civic pa
 <div class="share">
 
 <h3>Share this Mail Campaign on Whatsapp</h3>
-
+<br> <br>
 <a href="#" onclick="shareWhatsApp()"> Click Here !!</a>
 
 </div>
 
+
+
 <footer>
 
-Made with ❤️ by indian youth.
+Made with ❤️ by Indian Youth
 
 </footer>
 
+
+
 </div>
+
+
+
+
+
 
 <script>
 
-function shareWhatsApp() {
-    const text = "Join this campaign to rasie voice against caste based reservation and send your email in just 1 minute!\n\n" + window.location.href;
-    window.open("https://wa.me/?text=" + encodeURIComponent(text), "_blank");
+
+const counterURL =
+"https://api.counterapi.dev/v2/vivek-kumars-team-4834/first-counter-4834";
+
+
+
+
+// Get counter value
+
+async function loadCounter(){
+
+try{
+
+let response = await fetch(counterURL);
+
+let data = await response.json();
+
+
+document.getElementById("clickCount").innerText =
+data.data?.up_count ||
+data.count ||
+data.value ||
+0;
+
+
 }
+
+catch(error){
+
+console.log(error);
+
+}
+
+
+}
+
+
+
+
+// Increase counter
+
+async function increaseCounter(){
+
+
+try{
+
+
+let response = await fetch(counterURL + "/up");
+
+
+let data = await response.json();
+
+
+document.getElementById("clickCount").innerText =
+data.data?.up_count ||
+data.count ||
+data.value ||
+0;
+
+
+}
+
+
+catch(error){
+
+console.log(error);
+
+}
+
+
+
+}
+
+
+
 
 function sendEnglish(){
 
-const subject="Regarding Reforms in Reservation, Cut-Off Marks, and Examination Fee Policies
 
-const body=`
-The Hon’ble Union Minister of Education,
+increaseCounter();
+
+const subject = "Regarding Reforms in Reservation, Cut-Off Marks, and Examination Fee Policies";
+
+const mailEnglishContent = `The Hon’ble Union Minister of Education,
 
 I, as a youth of India, write to bring to your immediate attention the urgent need to reform our national policies regarding caste-based reservation, caste-based cut-off marks, and caste-based examination fee structures in higher education and public recruitment.
 
@@ -267,18 +444,41 @@ Thank you for your time, leadership, and consideration.
 
 Respectfully,
 
-Youth of India
-`;
+Youth of India`;
 
-window.location.href=`mailto:minister.sm@gov.in?cc=d.pradhan@sansad.nic.in,president@bjp.org&bcc=vkthelegend95@gmail.com&subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+const to = "min.edu@gov.in";
+
+
+const cc = ["minister.sm@gov.in",
+        "connect@mygov.nic.in",
+        "hm@mha.gov.in","amitshah.mp@sansad.nic.in",
+        "jp.nadda@sansad.nic.in"
+    ].join(",");
+	
+let mail =
+
+    "mailto:" + to +
+    "?cc=" + encodeURIComponent(cc) +
+    "&subject=" + encodeURIComponent(subject) +
+    "&body=" + encodeURIComponent(mailEnglishContent);
+
+window.location.href = mail;
+
 
 }
 
+
+
+
+
 function sendHindi(){
 
-const subject="जातिगत आरक्षण, जातिगत कट-ऑफ और परीक्षा शुल्क नीतियों में सुधार हेतु सुझाव पत्र";
 
-const body=`आदरणीय केंद्रीय शिक्षा मंत्री,
+increaseCounter();
+
+const subject = "जातिगत आरक्षण, जातिगत कट-ऑफ और परीक्षा शुल्क नीतियों में सुधार हेतु सुझाव पत्र";
+
+const mailHindiContent = `आदरणीय केंद्रीय शिक्षा मंत्री,
 
 मैं, भारत का एक युवा, उच्च शिक्षा और सरकारी भर्तियों में लागू वर्तमान जातिगत आरक्षण, जाति आधारित कट-ऑफ (न्यूनतम अंक) और जाति आधारित परीक्षा शुल्क संरचना में तत्काल सुधार की आवश्यकता की ओर आपका ध्यान आकर्षित करने हेतु यह पत्र लिख रहा/रही हूँ।
 
@@ -300,11 +500,73 @@ const body=`आदरणीय केंद्रीय शिक्षा म�
 
 भारत का युवा`;
 
-window.location.href=`mailto:minister.sm@gov.in?cc=d.pradhan@sansad.nic.in,president@bjp.org&bcc=vkthelegend95@gmail.com&subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+const to = "min.edu@gov.in";
+
+
+const cc = ["minister.sm@gov.in",
+        "connect@mygov.nic.in",
+        "hm@mha.gov.in","amitshah.mp@sansad.nic.in",
+        "jp.nadda@sansad.nic.in"
+    ].join(",");
+	
+let mail =
+
+    "mailto:" + to +
+    "?cc=" + encodeURIComponent(cc) +
+    "&subject=" + encodeURIComponent(subject) +
+    "&body=" + encodeURIComponent(mailHindiContent);
+
+
+window.location.href = mail;
+
 
 }
 
+
+
+
+
+function shareWhatsApp(){
+
+
+increaseCounter();
+
+
+
+let message =
+
+"Join this youth campaign and share your voice.\n\n"
+
++ window.location.href;
+
+
+
+window.open(
+
+"https://wa.me/?text="
+
++ encodeURIComponent(message),
+
+"_blank"
+
+);
+
+
+}
+
+
+
+
+
+loadCounter();
+
+
+
 </script>
 
+
+
 </body>
+
 </html>
