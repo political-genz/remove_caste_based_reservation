@@ -522,80 +522,55 @@ Made with ❤️ by Indian Youth
 
 
 <script>
-
-
-const counterURL =
+const counterURL = 
 "https://api.counterapi.dev/v2/vivek-kumars-team-4834/first-counter-4834";
 
 
-
-
-// Get counter value
-
+// Load current count
 async function loadCounter(){
 
-try{
+    try{
 
-let response = await fetch(counterURL);
+        const res = await fetch(counterURL);
+        const data = await res.json();
 
-let data = await response.json();
+        console.log(data); // check response
 
+        document.getElementById("clickCount").innerText =
+        data.data.up_count;
 
-document.getElementById("clickCount").innerText =
-data.data?.up_count ||
-data.count ||
-data.value ||
-0;
+    }
+    catch(error){
 
+        console.log("Load error:", error);
 
-}
-
-catch(error){
-
-console.log(error);
+    }
 
 }
 
 
-}
-
-
-
-
-// Increase counter
-
+// Increase count
 async function increaseCounter(){
 
+    try{
 
-try{
+        const res = await fetch(counterURL + "/up");
 
+        const data = await res.json();
 
-let response = await fetch(counterURL + "/up");
+        console.log(data); // check response
 
+        document.getElementById("clickCount").innerText =
+        data.data.up_count;
 
-let data = await response.json();
+    }
+    catch(error){
 
+        console.log("Update error:", error);
 
-document.getElementById("clickCount").innerText =
-data.data?.up_count ||
-data.count ||
-data.value ||
-0;
-
-
-}
-
-
-catch(error){
-
-console.log(error);
+    }
 
 }
-
-
-
-}
-
 
 
 
