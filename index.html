@@ -554,24 +554,31 @@ async function increaseCounter(){
 
     try{
 
-        const res = await fetch(counterURL + "/up");
+        let response = await fetch(
+            "https://api.counterapi.dev/v2/vivek-kumars-team-4834/first-counter-4834/up",
+            {
+                method:"GET",
+                mode:"cors"
+            }
+        );
 
-        const data = await res.json();
 
-        console.log(data); // check response
+        let data = await response.json();
+
+        console.log(data);
 
         document.getElementById("clickCount").innerText =
         data.data.up_count;
 
     }
+
     catch(error){
 
-        console.log("Update error:", error);
+        console.log(error);
 
     }
 
 }
-
 
 
 function sendEnglish(){
